@@ -1,0 +1,43 @@
+
+body{
+ margin: 0;
+ padding: 0;
+}
+.navigator{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.536);
+
+}
+.logo{ 
+    margin-right: 10%;
+    width: 110px;
+    height: 40px;
+
+}
+.input {
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    justify-content: center;
+
+    background-color: rgba(234, 232, 232, 0.895);
+    border: none;
+    margin-right: 10%;
+   
+}
+
+.sign-up-btn {
+    border-radius: 30px;
+    border: none;
+    padding: 10px;
+    margin-left: 1%;
+    
+    background-color:rgba(252, 20, 20, 0.856);
+    color: white;
+}
+.input:hover,
+.sign-up-btn:hover{
+    background-color: rgba(192, 191, 191, 0.777);
+}
