@@ -1,5 +1,5 @@
 //import './App.css';
-import { getAllComments,  } from './api';
+
 import Navigator from './components/navigator';
 import { getAllPosts, getAllComments, getAllUsers } from './api';
 import { useEffect, useState } from 'react';
