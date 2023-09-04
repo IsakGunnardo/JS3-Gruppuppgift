@@ -4,11 +4,16 @@ import Navigator from './components/navigator';
 function App() {
   
   return (
+    
     <>
+      <Navigator />
+      
       <h1>Users</h1>
       <PeopleList users={users} />
       <PostKomponent posts={posts} />
+
     </>
+    
   );
 }
 
