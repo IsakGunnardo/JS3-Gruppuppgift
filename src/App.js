@@ -21,10 +21,24 @@ function PostKomponent ({posts}) {
     <ul>
       {posts.map((holder, index) => (
         <li key={index}>
-          {holder.body}</li>
+          {holder.body}
+        </li>
       ))}    
     </ul>
   );
+}
+
+function CommentKomponent ({comments}) {
+  return (
+    <ul>
+      {comments.map((holder, index) => {
+        <li key={index}>
+          {holder.body}
+        </li>
+      })}
+    </ul>
+
+  )
 }
 
 function App() {
@@ -32,7 +46,7 @@ function App() {
 
 
   const [posts, setPosts] = useState([]);
-  //const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([]);
   const [users, setUsers] = useState([]);
 
 
@@ -40,17 +54,17 @@ function App() {
     getAllPosts().then((result) => setPosts(result.posts));
   }, []);
 
-  /*
+  
   useEffect(() => {
     getAllComments().then((result) => setComments(result.comments))
   }, []);
-*/
+
   useEffect(() => {
     getAllUsers().then((result) => setUsers(result.users))
   }, []);
 
 
-console.log(posts[1])
+console.log(comments[1])
 
   return (
     
@@ -59,7 +73,10 @@ console.log(posts[1])
       
       <h1>Users</h1>
       <PeopleList users={users} />
+      <h2>Posts</h2>
       <PostKomponent posts={posts} />
+      <h2>Comments</h2>
+      <CommentKomponent comments={comments} />
 
     </>
     
