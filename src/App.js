@@ -3,7 +3,7 @@
 import Navigator from './components/navigator';
 import { getAllPosts, getAllComments, getAllUsers } from './api';
 import { useEffect, useState } from 'react';
-
+import { AsideLeft } from './components/asideleft';
 function PeopleList ({users}) {
   return (
     <ul>
@@ -56,7 +56,7 @@ console.log(posts[1])
     
     <>
       <Navigator />
-      
+      <AsideLeft/>
       <h1>Users</h1>
       <PeopleList users={users} />
       <PostKomponent posts={posts} />
