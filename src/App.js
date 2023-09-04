@@ -14,16 +14,28 @@ function PeopleList ({users}) {
   );
 }
 
+function PostKomponent ({posts}) {
+  return (
+    <ul>
+      {posts.map((holder, index) => (
+        <li key={index}>
+          {holder.body}</li>
+      ))}    
+    </ul>
+  );
+}
+
 function App() {
-  //const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([]);
   //const [comments, setComments] = useState([]);
   const [users, setUsers] = useState([]);
 
-/*
+
   useEffect(() => {
     getAllPosts().then((result) => setPosts(result.posts));
   }, []);
 
+  /*
   useEffect(() => {
     getAllComments().then((result) => setComments(result.comments))
   }, []);
@@ -33,7 +45,7 @@ function App() {
   }, []);
 
 
-console.log(users[1])
+console.log(posts[1])
 
 
 
@@ -41,6 +53,7 @@ console.log(users[1])
     <>
       <h1>Users</h1>
       <PeopleList users={users} />
+      <PostKomponent posts={posts} />
     </>
   );
 }
