@@ -4,9 +4,11 @@ import Navigator from './components/navigator';
 function App() {
   
   return (
-    <div className="App">
-      <Navigator/>
-    </div>
+    <>
+      <h1>Users</h1>
+      <PeopleList users={users} />
+      <PostKomponent posts={posts} />
+    </>
   );
 }
 
