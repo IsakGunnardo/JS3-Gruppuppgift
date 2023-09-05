@@ -3,7 +3,7 @@
 .sidebar-left{
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 400px;
     border-right: 1px solid black;
 }
 
@@ -41,10 +41,11 @@
 
 .sidebar-right{
     display: flex;
-    position: absolute;
+    position: sticky;
     right: 0px;
     top: 100px;
-    width: 250px;
+    width: 400px;
+    border-left: 1px solid black;
 }
 
 .sidebar-right-h2{

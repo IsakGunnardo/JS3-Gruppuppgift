@@ -1,4 +1,4 @@
-//import './App.css';
+import "./App.css";
 
 import Navigator from "./components/navigator";
 import { getAllPosts, getAllComments, getAllUsers } from "./api";
@@ -48,8 +48,11 @@ function App() {
   return (
     <>
       <Navigator />
-      <AsideLeft />
-      <AsideRight />
+      <div className="content-container">
+        <AsideLeft />
+        <PostKomponent posts={posts} />
+        <AsideRight />
+      </div>
       <h1>Users</h1>
       <PeopleList users={users} />
       <PostKomponent posts={posts} />
