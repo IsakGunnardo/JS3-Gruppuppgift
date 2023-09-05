@@ -1,4 +1,4 @@
-export function MainContent({ posts, users }) {
+export function Main({ posts, users }) {
   if (Object.keys(users).length === 0) {
     return (
       <div>

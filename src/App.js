@@ -5,9 +5,9 @@ import { getAllPosts, getAllComments, getAllUsers } from "./api/fetch";
 import { useEffect, useState } from "react";
 import { AsideLeft } from "./components/asideleft";
 import { AsideRight } from "./components/asideright";
-import { MainContent } from "./components/main";
+import { Main } from "./components/Main";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./Pages/home";
+import { Home } from "./Pages/Home";
 import { AddPost } from "./Pages/addpost";
 import { PostAComment } from "./Pages/post";
 
@@ -75,7 +75,7 @@ function App() {
         <Navigator />
         <div className="content-container">
           <AsideLeft />
-          <MainContent posts={posts} users={users} />
+          <Main posts={posts} users={users} />
           <AsideRight />
         </div>
         <h1>Users</h1>
