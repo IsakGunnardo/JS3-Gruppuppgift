@@ -11,7 +11,7 @@
     margin-left: 20%;
 }
 
-.sidebar-left-ul{
+.sidebar-left-ul, .sidebar-ul-toggle{
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -32,6 +32,12 @@
     border: none;
     background-color: white;
 }
+
+.sidebar-ul-toggle{
+
+    display: none;
+}
+
 
 
 
