@@ -1,15 +1,17 @@
 import "./App.css";
+import { useEffect, useState } from "react";
+
+import { Home } from "./pages/home";
+import { AddPost } from "./pages/addpost";
+import { PostAComment } from "./pages/post";
+import { getAllPosts, getAllComments, getAllUsers } from "./api/fetch";
 
 import Navigator from "./components/navigator";
-import { getAllPosts, getAllComments, getAllUsers } from "./api/fetch";
-import { useEffect, useState } from "react";
 import { AsideLeft } from "./components/asideleft";
 import { AsideRight } from "./components/asideright";
-import { Main } from "./components/Main";
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./Pages/Home";
-import { AddPost } from "./Pages/addpost";
-import { PostAComment } from "./Pages/post";
+import {Main} from './components/main'
+import { Route, Routes, Outlet } from "react-router-dom";
+
 
 function PeopleList({ users }) {
   return (
@@ -65,13 +67,14 @@ function App() {
   let content; 
   if (Route.route)
   */
+ 
   return (
     <> 
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/AddPost" element={<AddPost />}></Route>
-        <Route path="/post" element={<PostAComment />}></Route>
-      </Routes>
+     <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/addpost" element={<AddPost />}/>
+        <Route path="/post" element={<PostAComment />}/>
+      </Routes> 
         <Navigator />
         <div className="content-container">
           <AsideLeft />

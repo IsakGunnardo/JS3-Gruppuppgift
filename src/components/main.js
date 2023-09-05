@@ -1,4 +1,6 @@
-export default function Main({ posts, users }) {
+//import {Link} from 'react-router-dom';
+
+export function Main({ posts, users }) {
   if (Object.keys(users).length === 0) {
     return (
       <div>
