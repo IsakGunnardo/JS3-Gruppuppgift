@@ -5,6 +5,8 @@ import { getAllPosts, getAllComments, getAllUsers } from "./api";
 import { useEffect, useState } from "react";
 import { AsideLeft } from "./components/asideleft";
 import { AsideRight } from "./components/asideright";
+import { MainContent } from "./components/main";
+
 function PeopleList({ users }) {
   return (
     <ul>
@@ -43,14 +45,14 @@ function App() {
     getAllUsers().then((result) => setUsers(result.users));
   }, []);
 
-  console.log(posts[1]);
+  /* console.log(posts[1]); */
 
   return (
     <>
       <Navigator />
       <div className="content-container">
         <AsideLeft />
-        <PostKomponent posts={posts} />
+        <MainContent posts={posts} users={users} />
         <AsideRight />
       </div>
       <h1>Users</h1>

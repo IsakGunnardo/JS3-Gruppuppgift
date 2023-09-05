@@ -40,11 +40,11 @@
 /*Högra sidebaren */
 
 .sidebar-right{
-    display: flex;
     position: sticky;
     right: 0px;
     top: 100px;
     width: 400px;
+    height: 100vh;
     border-left: 1px solid black;
 }
 
