@@ -1,11 +1,13 @@
 import "./App.css";
 
 import Navigator from "./components/navigator";
-import { getAllPosts, getAllComments, getAllUsers } from "./api";
+import { getAllPosts, getAllComments, getAllUsers } from "./api/fetch";
 import { useEffect, useState } from "react";
 import { AsideLeft } from "./components/asideleft";
 import { AsideRight } from "./components/asideright";
 import { MainContent } from "./components/main";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./Pages/home";
 
 function PeopleList({ users }) {
   return (
@@ -27,12 +29,13 @@ function PostKomponent({ posts }) {
   );
 }
 
-function CommentKomponent ({comments}) {
+function CommentKomponent ({ comments }) {
   return (
     <ul>
       {comments.map((holder, index) => {
+        return (
         <li key={index}>{holder.body} </li>
-      })}
+      )})}
     </ul>
   )
 }
@@ -55,21 +58,29 @@ function App() {
     getAllUsers().then((result) => setUsers(result.users));
   }, []);
 
-  /* console.log(posts[1]); */
-
+  //console.log(comments.body);
+  /*
+  let content; 
+  if (Route.route)
+  */
   return (
-    <>
-      <Navigator />
-      <div className="content-container">
-        <AsideLeft />
-        <MainContent posts={posts} users={users} />
-        <AsideRight />
-      </div>
-      <h1>Users</h1>
-      <PeopleList users={users} />
-      <PostKomponent posts={posts} />
-      <h2>Comments</h2>
-      <CommentKomponent comments={comments} />
+    <> 
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="AddPost" element={<Home />}></Route>
+        <Route path="/post" element={<Home />}></Route>
+      </Routes>
+        <Navigator />
+        <div className="content-container">
+          <AsideLeft />
+          <MainContent posts={posts} users={users} />
+          <AsideRight />
+        </div>
+        <h1>Users</h1>
+        <PeopleList users={users} />
+        <PostKomponent posts={posts} />
+        <h2>Comments</h2>
+        <CommentKomponent comments={comments} />       
     </>
   );
 }

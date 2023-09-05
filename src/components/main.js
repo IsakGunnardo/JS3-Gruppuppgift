@@ -19,7 +19,7 @@ export function MainContent({ posts, users }) {
             </li>
           ))}
           {console.log(JSON.stringify(users[1]))}
-          {console.log(JSON.stringify(posts[1]))}
+          {console.log(JSON.stringify(posts[1]))} 
         </ul>
       </>
     );
