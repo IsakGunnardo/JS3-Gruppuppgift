@@ -1,9 +1,9 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 
-import { Home } from "./pages/home";
-import { AddPost } from "./pages/addpost";
-import { PostAComment } from "./pages/post";
+import { Home } from "./Pages/home";
+import { AddPost } from "./Pages/addpost";
+import { PostAComment } from "./Pages/post";
 import { getAllPosts, getAllComments, getAllUsers } from "./api/fetch";
 
 import Navigator from "./components/navigator";

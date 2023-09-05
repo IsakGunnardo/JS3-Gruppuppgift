@@ -3,12 +3,17 @@
 .sidebar-left{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 60%;
     border-right: 1px solid black;
+
+
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0
 }
 
 .sidebar-left>section{
-    margin-left: 20%;
+    margin-left: 2rem
 }
 
 .sidebar-left-ul, .sidebar-ul-toggle{
@@ -30,7 +35,11 @@
     width: 80px;
     height: 40px;
     border: none;
-    background-color: white;
+    background-color: transparent;
+}
+
+.sidebar-left-p{
+    font-size: 11px;
 }
 
 .sidebar-ul-toggle{
@@ -38,6 +47,10 @@
     display: none;
 }
 
+.inner-ul{
+    border: none;
+
+}
 
 
 

@@ -19,8 +19,8 @@ export function AsideLeft(){
             <h6>TOPICS</h6>
 
                 <ul className="sidebar-left-ul">
-                    <li onClick={handleClick} className="sidebar-left-ul-toggle">Gaming
-                        <ul className="sidebar-ul-toggle"  style={{ display: toggle ? 'block' : 'none' }}>
+                    <li onClick={handleClick}>Gaming
+                        <ul className="sidebar-ul-toggle inner-ul"  style={{ display: toggle ? 'none' : 'block'}}>
                             <li>  hello </li>
                             <li>  hello </li>
                             <li>  hello </li>
@@ -61,9 +61,12 @@ export function AsideLeft(){
                     <li>Help</li>
                     <button className="sidebar-left-button">See more</button>
 
+
+                <p className="sidebar-left-p">Reddit, inc. © 2023. All rights reserved.</p>
+
+
                 </ul>
 
-                <p>Reddit, inc. © 2023. All rights reserved.</p>
             </section>
         </aside>
     )
