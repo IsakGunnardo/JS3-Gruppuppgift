@@ -8,6 +8,8 @@ import { AsideRight } from "./components/asideright";
 import { MainContent } from "./components/main";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./Pages/home";
+import { AddPost } from "./Pages/addpost";
+import { PostAComment } from "./Pages/post";
 
 function PeopleList({ users }) {
   return (
@@ -67,8 +69,8 @@ function App() {
     <> 
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="AddPost" element={<Home />}></Route>
-        <Route path="/post" element={<Home />}></Route>
+        <Route path="/AddPost" element={<AddPost />}></Route>
+        <Route path="/post" element={<PostAComment />}></Route>
       </Routes>
         <Navigator />
         <div className="content-container">
