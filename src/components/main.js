@@ -18,7 +18,7 @@ export function Main({ posts, users }) {
               <h4>
                 Creator: {users[index].firstName} {users[index].lastName}
               </h4>
-              <img src={users[index].image} width={100} height={50} />
+              <img src={users[index].image} width={25} height={25} />
             </li>
           ))}
           {console.log(JSON.stringify(users[1]))}
