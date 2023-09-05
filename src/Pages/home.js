@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from "./components/Main.js"
+import Main from "./components/Main"
 
 function Home() {
   return (
@@ -10,3 +10,6 @@ function Home() {
 }
 
 export default Home
+
+
+
