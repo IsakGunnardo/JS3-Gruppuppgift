@@ -1,0 +1,56 @@
+
+
+.sidebar-left{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-right: 1px solid black;
+}
+
+.sidebar-left>section{
+    margin-left: 20%;
+}
+
+.sidebar-left-ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 1px solid black;
+    padding: 10%;
+;
+
+}
+
+.sidebar-left-ul:hover{
+    cursor:all-scroll;
+}
+
+.sidebar-left-button{
+    width: 80px;
+    height: 40px;
+    border: none;
+    background-color: white;
+}
+
+
+
+/*Högra sidebaren */
+/*Högra sidebaren */
+/*Högra sidebaren */
+
+.sidebar-right{
+    position: sticky;
+    right: 0px;
+    top: 100px;
+    width: 400px;
+    height: 100vh;
+    border-left: 1px solid black;
+}
+
+.sidebar-right-h2{
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+}
+
