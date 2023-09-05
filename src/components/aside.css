@@ -33,3 +33,23 @@
     background-color: white;
 }
 
+
+
+/*Högra sidebaren */
+/*Högra sidebaren */
+/*Högra sidebaren */
+
+.sidebar-right{
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    width: 250px;
+}
+
+.sidebar-right-h2{
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 600;
+}
+
