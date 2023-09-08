@@ -18,6 +18,11 @@ export async function getAllUsers() {
   return json;
 }
 
+export async function getOnePosts({onepost}) {
+  let result = await fetch(`https://dummyjson.com/posts/${onepost}`);
+  let json = await result.json();
+  return json;
+}
 
 
 

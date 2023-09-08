@@ -1,18 +1,17 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 
-import { Home } from "./Pages/home";
-import { AddPost } from "./Pages/addpost";
-import { PostAComment } from "./Pages/post";
+import { Home } from "./pages/home";
+import { AddPost } from "./pages/addpost";
+import { OnePost } from "./pages/post";
 import { getAllPosts, getAllComments, getAllUsers } from "./api/fetch";
 
 import Navigator from "./components/navigator";
 import { AsideLeft } from "./components/asideleft";
 import { AsideRight } from "./components/asideright";
-import {Main} from './components/main'
-import { Route, Routes, Outlet } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-
+/* 
 function PeopleList({ users }) {
   return (
     <ul>
@@ -23,15 +22,7 @@ function PeopleList({ users }) {
   );
 }
 
-function PostKomponent({ posts }) {
-  return (
-    <ul>
-      {posts.map((holder, index) => (
-        <li key={index}>{holder.body}</li>
-      ))}
-    </ul>
-  );
-}
+
 
 function CommentKomponent ({ comments }) {
   return (
@@ -43,6 +34,20 @@ function CommentKomponent ({ comments }) {
     </ul>
   )
 }
+*/
+/* function PostKomponent({ posts }) {
+  return (
+    <ul>
+      {posts.map((holder, index) => (
+        <li key={index}>{holder.body}</li>
+      ))}
+    </ul>
+  );
+} <h1>Users</h1>
+ <PostKomponent posts={posts} />       <PeopleList users={users} />
+       
+        <h2>Comments</h2>
+        <CommentKomponent comments={comments} />   */
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -51,41 +56,34 @@ function App() {
 
   useEffect(() => {
     getAllPosts().then((result) => setPosts(result.posts));
-  }, []);
-
-  
-  useEffect(() => {
-    getAllComments().then((result) => setComments(result.comments))
-  }, []);
-
-  useEffect(() => {
+    getAllComments().then((result) => setComments(result.comments));
     getAllUsers().then((result) => setUsers(result.users));
   }, []);
+
+  console.log("USERS: ", users);
+  console.log("POSTS: ", posts);
 
   //console.log(comments.body);
   /*
   let content; 
   if (Route.route)
   */
- 
+
+  // https://reactrouter.com/en/main/hooks/use-navigate
+  // URL parameters
   return (
-    <> 
-     <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/addpost" element={<AddPost />}/>
-        <Route path="/post" element={<PostAComment />}/>
-      </Routes> 
-        <Navigator />
-        <div className="content-container">
-          <AsideLeft />
-          <Main posts={posts} users={users} />
-          <AsideRight />
-        </div>
-        <h1>Users</h1>
-        <PeopleList users={users} />
-        <PostKomponent posts={posts} />
-        <h2>Comments</h2>
-        <CommentKomponent comments={comments} />       
+    <>
+      <Navigator />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/addpost" element={<AddPost />} />
+        <Route path="/post" element={<OnePost />} />
+      </Routes>
+      <div className="content-container">
+        <AsideLeft />
+        <Home posts={posts} users={users} />
+        <AsideRight />
+      </div>
     </>
   );
 }

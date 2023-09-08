@@ -1,6 +1,8 @@
 //import {Link} from 'react-router-dom';
 
 export function Main({ posts, users }) {
+  console.log("MAIN: ", users);
+  console.log("MAIN POSTS: ", posts);
   if (Object.keys(users).length === 0) {
     return (
       <div>
@@ -8,6 +10,7 @@ export function Main({ posts, users }) {
       </div>
     );
   } else {
+    
     return (
       <>
         <ul>
@@ -21,11 +24,8 @@ export function Main({ posts, users }) {
               <img src={users[index].image} width={25} height={25} />
             </li>
           ))}
-          {console.log(JSON.stringify(users[1]))}
-           
         </ul>
       </>
     );
   }
 }
-
